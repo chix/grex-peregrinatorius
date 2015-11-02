@@ -1,0 +1,10 @@
+/nbproject
+/node_modules
+/bower_components
+.sass-cache/
+/npm-debug.log
+/static/js/*
+/static/css/*
+!/static/js/partials
+!/static/js/scripts.min.js
+!/static/css/styles.min.css

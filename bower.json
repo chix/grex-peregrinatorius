@@ -1,0 +1,16 @@
+{
+	"name": "grex",
+	"authors": [
+		"Martin Kuric <martin.chix.kuric@gmail.com>"
+	],
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components"
+	],
+	"dependencies": {
+		"jquery": "~1.11.3"
+	},
+	"devDependencies": {
+	}
+}
