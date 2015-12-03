@@ -1,0 +1,1 @@
+<?=$this->editable('text', 'wysiwyg');?>

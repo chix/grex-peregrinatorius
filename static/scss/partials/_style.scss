@@ -1,0 +1,59 @@
+.grex {
+
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+
+	&-perex {
+		font-size: 16px;
+		line-height: 28px;
+	}
+
+	&-header {
+		& > .mdl-layout__drawer-button {
+			margin-top: 30px;
+		}
+
+		&__row {
+			&-100 {
+				height: 100px;
+			}
+		}
+	}
+
+	&__logo {
+		height: 70px;
+	}
+
+	&__posts {
+		max-width: 900px;
+	}
+
+	&__zigzag-top {
+		background: linear-gradient(45deg, #424242 10px, transparent 0), linear-gradient(-45deg, #424242 10px, transparent 0);
+		background-position: left-top;
+		background-repeat: repeat-x;
+		background-size: 30px 20px;
+		content:" ";
+		left: 0px;
+		width: 100%;
+		height: 20px;
+	}
+
+	&__zigzag-bottom {
+		position: relative;
+		padding: 8px 8px 16px 8px;
+		background: rgb(121,85,72);
+	}
+	&__zigzag-bottom:after {
+		background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
+		background-position: left-bottom;
+		background-repeat: repeat-x;
+		background-size: 32px 32px;
+		content: " ";
+		display: block;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 32px;
+	}
+}

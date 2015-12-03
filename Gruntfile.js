@@ -16,7 +16,16 @@ module.exports = function(grunt) {
 					destPrefix: 'static/js/lib'
 				},
 				files: {
-					'000_jquery.min.js': 'jquery/dist/jquery.min.js'
+					'000_jquery.min.js': 'jquery/dist/jquery.min.js',
+					'010_material.min.js': 'material-design-lite/material.min.js'
+				}
+			},
+			css: {
+				options: {
+					destPrefix: 'static/scss'
+				},
+				files: {
+					'lib/_material.min.scss': 'material-design-lite/material.min.css'
 				}
 			}
 		},
@@ -59,7 +68,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'static/js/scripts.js': [
-						'static/js/lib/*js',
+						'static/js/lib/*.js',
 						'static/js/partials/*.js'
 					]
 				}
@@ -70,7 +79,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'static/js/scripts.min.js': [
-						'static/js/lib/*js',
+						'static/js/lib/*.js',
 						'static/js/partials/*.js'
 					]
 				}
@@ -90,6 +99,10 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: ['static/js/partials/*.js'],
+				tasks: ['uglify:dev']
+			},
+			php: {
+				files: ['website/views/**/*.php'],
 				tasks: ['uglify:dev']
 			}
 		}
