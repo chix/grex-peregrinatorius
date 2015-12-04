@@ -52,6 +52,9 @@
 /website/lib/Website/Tool/Setup
 /website/lib/Website/Tool/Deployment
 
+# composer libraries
+/vendor
+
 # frontend stack
 /nbproject
 /node_modules
