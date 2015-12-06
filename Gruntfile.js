@@ -16,7 +16,6 @@ module.exports = function(grunt) {
 					destPrefix: 'static/js/lib'
 				},
 				files: {
-					'000_jquery.min.js': 'jquery/dist/jquery.min.js',
 					'010_material.min.js': 'material-design-lite/material.min.js'
 				}
 			},

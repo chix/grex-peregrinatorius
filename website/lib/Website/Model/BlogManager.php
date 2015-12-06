@@ -12,6 +12,7 @@ class BlogManager
 		$listing = new \Pimcore\Model\Document\Listing();
 		$listing->addConditionParam('parentId = ?', $blogRoot->getData());
 		$listing->addConditionParam('type = ?', 'page');
+		$listing->setOrderKey('index');
 		if ($limit) {
 			$listing->setLimit($limit);
 		}

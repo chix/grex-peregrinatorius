@@ -1,6 +1,16 @@
+//from mdl
+$primaryColor: #795548;
+$secondaryColor: #FFAB40;
+
+//custom
+$footerColor: #444444;
+$bgColor: #E4E4E4;
+
 .grex {
 
 	font-family: 'Roboto', 'Helvetica', sans-serif;
+	background: $bgColor url('/static/img/map.jpg') center top no-repeat;
+	background-size: cover;
 
 	&-perex {
 		font-size: 16px;
@@ -19,41 +29,69 @@
 		}
 	}
 
+	&-footer {
+		background-color: $footerColor;
+	}
+
 	&__logo {
 		height: 70px;
 	}
 
 	&__posts {
 		max-width: 900px;
+		margin-top: 24px;
+
+		& > .mdl-card {
+			margin-bottom: 24px;
+
+			& .mdl-card__title,.mdl-card__supporting-text,.mdl-card__actions {
+				box-sizing: border-box;
+				width: 100%;
+				padding-right: 36px;
+				padding-left: 36px;
+			}
+
+			& .grex-text {
+				padding-right: 72px;
+				padding-left: 72px;
+				padding-bottom: 72px;
+			}
+		}
 	}
 
-	&__zigzag-top {
-		background: linear-gradient(45deg, #424242 10px, transparent 0), linear-gradient(-45deg, #424242 10px, transparent 0);
-		background-position: left-top;
-		background-repeat: repeat-x;
-		background-size: 30px 20px;
-		content:" ";
-		left: 0px;
-		width: 100%;
-		height: 20px;
-	}
-
-	&__zigzag-bottom {
+	&-zigzag {
 		position: relative;
-		padding: 8px 8px 16px 8px;
-		background: rgb(121,85,72);
+
+		&::after {
+			background: linear-gradient(-45deg, transparent 24px, $primaryColor 0), linear-gradient(45deg, transparent 24px, $primaryColor 0);
+			background-position: left-bottom;
+			background-repeat: repeat-x;
+			background-size: 24px 24px;
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 24px;
+		}
 	}
-	&__zigzag-bottom:after {
-		background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
-		background-position: left-bottom;
-		background-repeat: repeat-x;
-		background-size: 32px 32px;
-		content: " ";
-		display: block;
-		position: absolute;
-		bottom: 0px;
-		left: 0px;
-		width: 100%;
-		height: 32px;
+
+	&-wave{
+		background-color: linear-gradient(to right, sandybrown, chocolate);
+		height: 50px;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-repeat: repeat;
+			height: 10px;
+			background-size: 20px 20px;
+			background-image: radial-gradient(circle at 10px -5px, transparent 12px, $footerColor 13px);
+		}
 	}
 }

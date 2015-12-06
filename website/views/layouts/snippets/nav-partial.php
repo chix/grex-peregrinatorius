@@ -1,7 +1,7 @@
 <nav class="mdl-navigation<?if($this->header) echo ' mdl-layout--large-screen-only';?>">
-	<a href="javascript:void();" class="mdl-navigation__link">Who we are</a>
-	<a href="/blog" class="mdl-navigation__link">Blog</a>
-	<a href="javascript:void();" class="mdl-navigation__link">Partners</a>
+	<?foreach($this->navigation as $url => $title):?>
+		<a href="<?=$url;?>" class="mdl-navigation__link"><?=$title;?></a>
+	<?endforeach;?>
 </nav>
 <?if($this->header):?>
 	<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable

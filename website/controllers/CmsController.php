@@ -8,14 +8,22 @@ class CmsController extends \Website\Controller\BaseController
 	public function indexAction()
 	{
 		$this->enableLayout();	
+		$this->setCanonicalUrl();
 
 		$blogManager = new \Website\Model\BlogManager();
 		$this->view->posts = $blogManager->getPosts(3);
 	}
 
+	public function whoWeAreAction()
+	{
+		$this->enableLayout();
+		$this->setCanonicalUrl();
+	}
+
 	public function blogAction()
 	{
 		$this->enableLayout();
+		$this->setCanonicalUrl();
 
 		$blogManager = new \Website\Model\BlogManager();
 		$this->view->posts = $blogManager->getPosts();
@@ -24,6 +32,13 @@ class CmsController extends \Website\Controller\BaseController
 	public function blogPostAction()
 	{
 		$this->enableLayout();
+		$this->setCanonicalUrl();
+	}
+
+	public function partnersAction()
+	{
+		$this->enableLayout();
+		$this->setCanonicalUrl();
 	}
 
 	/* 						STATIC-ROUTE ROUTED ACTIONS						*/

@@ -4,11 +4,14 @@
 			<img class="grex__logo" src="/static/img/logo.png">
 		</a>
 		<div class="mdl-layout-spacer"></div>
-		<?=$this->partial('snippets/nav-partial.php', array('header' => true));?>
+		<?=$this->partial('snippets/nav-partial.php',
+				array('navigation' => $this->mainNavigation, 'header' => true));?>
 	</div>
-	<div class="grex__zigzag-bottom"></div>
+	<div class="grex-zigzag"></div>
 </header>
 <div class="mdl-layout__drawer grex-drawer">
-	<span class="mdl-layout-title">Navigation</span>
-	<?=$this->partial('snippets/nav-partial.php');?>
+	<span class="mdl-layout-title">Navigace</span>
+	<?=$this->partial('snippets/nav-partial.php',
+			array('navigation' => $this->mainNavigation))
+	;?>
 </div>

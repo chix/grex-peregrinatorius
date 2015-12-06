@@ -46,4 +46,38 @@ class Tool
 		\Pimcore\Model\Object\AbstractObject::setGetInheritedValues(self::$inheritance);
 		\Pimcore\Model\Object\Localizedfield::setGetFallbackValues(self::$fallback);
 	}
+
+	/**
+	 * @param mixed $image image asset or hotspot image
+	 * @param string $thumbnail image thumbnail pipeline name
+	 * @param array $additionalOptions additional options (see pimcore document image editable documentation)
+	 * @param mixed $fallbackImage image asset or image asset ID or image asset path
+	 * @return string HTML image element like the document image editable
+	 */
+	public static function image($image, $thumbnail, $fallbackImage = null, $additionalOptions = array())
+	{
+		$html = null;
+		$imageTag = new \Pimcore\Model\Document\Tag\Image();
+		if ($image instanceof \Pimcore\Model\Document\Tag\Image && $image->getImage()) {
+			$imageTag = $image;
+		} elseif ($image instanceof \Pimcore\Model\Asset\Image) {
+			$imageTag->setImage($image);
+		} elseif ($image instanceof \Pimcore\Model\Object\Data\Hotspotimage && $image->getImage()) {
+			$html = $image->getThumbnail($thumbnail)->getHTML($additionalOptions);
+		} elseif ($fallbackImage instanceof \Pimcore\Model\Asset\Image) {
+			$imageTag->setImage($fallbackImage);
+		} elseif ($fallbackImage) {
+			$image = \Pimcore\Model\Asset\Image::getById($fallbackImage);
+			if (!$image) $image = \Pimcore\Model\Asset\Image::getByPath($fallbackImage);
+			if ($image) $imageTag->setImage($image);
+		}
+
+		if (!$html) {
+			$additionalOptions['thumbnail'] = $thumbnail;
+			$imageTag->setOptions($additionalOptions);
+			$html = $imageTag->frontend();
+		}
+
+		return $html;
+	}
 }

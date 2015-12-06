@@ -38,6 +38,9 @@ class BaseController extends Action
 	{
 		parent::postDispatch();
 
+		$websiteManager = new \Website\Model\WebsiteManager();
+		$this->view->mainNavigation = $websiteManager->getMainNavigation();
+		$this->view->canonicalUrl = $this->canonicalUrl;
 	}
 
 	protected function setCanonicalUrl($url = null)
