@@ -16,7 +16,8 @@ module.exports = function(grunt) {
 					destPrefix: 'static/js/lib'
 				},
 				files: {
-					'010_material.min.js': 'material-design-lite/material.min.js'
+					'001_jquery.min.js': 'jquery/dist/jquery.min.js',
+					'010_bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js'
 				}
 			},
 			css: {
@@ -24,7 +25,19 @@ module.exports = function(grunt) {
 					destPrefix: 'static/scss'
 				},
 				files: {
-					'lib/_material.min.scss': 'material-design-lite/material.min.css'
+					'lib/_bootstrap.min.scss': 'bootstrap/dist/css/bootstrap.min.css'
+				}
+			},
+			font: {
+				options: {
+					destPrefix: 'static/fonts'
+				},
+				files: {
+					'glyphicons-halflings-regular.eot': 'bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
+					'glyphicons-halflings-regular.svg': 'bootstrap/dist/fonts/glyphicons-halflings-regular.svg',
+					'glyphicons-halflings-regular.ttf': 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf',
+					'glyphicons-halflings-regular.woff': 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
+					'glyphicons-halflings-regular.woff2': 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2'
 				}
 			}
 		},

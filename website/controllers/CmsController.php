@@ -10,6 +10,7 @@ class CmsController extends \Website\Controller\BaseController
 		$this->enableLayout();	
 		$this->setCanonicalUrl();
 
+		$this->view->headerType = 'site';
 		$blogManager = new \Website\Model\BlogManager();
 		$this->view->posts = $blogManager->getPosts(3);
 	}
@@ -18,6 +19,8 @@ class CmsController extends \Website\Controller\BaseController
 	{
 		$this->enableLayout();
 		$this->setCanonicalUrl();
+
+		$this->view->headerType = 'page';
 	}
 
 	public function blogAction()
@@ -25,6 +28,7 @@ class CmsController extends \Website\Controller\BaseController
 		$this->enableLayout();
 		$this->setCanonicalUrl();
 
+		$this->view->headerType = 'page';
 		$blogManager = new \Website\Model\BlogManager();
 		$this->view->posts = $blogManager->getPosts();
 	}
@@ -33,12 +37,16 @@ class CmsController extends \Website\Controller\BaseController
 	{
 		$this->enableLayout();
 		$this->setCanonicalUrl();
+
+		$this->view->headerType = 'post';
 	}
 
 	public function partnersAction()
 	{
 		$this->enableLayout();
 		$this->setCanonicalUrl();
+
+		$this->view->headerType = 'page';
 	}
 
 	/* 						STATIC-ROUTE ROUTED ACTIONS						*/

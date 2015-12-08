@@ -1,25 +1,27 @@
 <?$this->layout()->setLayout('standard');?>
 
-<div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
-	<div class="mdl-card__media">
-		<?=$this->editable('headerImage', 'image', array('thumbnail' => 'BlogHeaderImage'));?>
-	</div>
-	<div class="mdl-card__supporting-text">
-		<h2 class="mdl-typography--display-1-color-contrast">
-			<?=$this->editable('title', 'input', array('width' => 800));?>
-		</h2>
-		<?=$this->editable('perex', 'wysiwyg');?>
-	</div>
-	<div class="mdl-card__actions mdl-card--border">
+<?=$this->render('cms/snippets/header.php');?>
 
+<!-- Post Content -->
+<article>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<?=$this->areablock('content', array(
+					'allowed' => array('text'),
+					'toolbar' => true,
+					'params' => array(
+						'text' => array('width' => 0)
+					)
+				));?>
+				<!--
+				<h2 class="section-heading">Reaching for the Stars</h2>
+				<a href="#">
+					<img class="img-responsive" src="img/post-sample-image.jpg" alt="">
+				</a>
+				<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+				-->
+			</div>
+		</div>
 	</div>
-	<div class="mdl-card__supporting-text grex-text mdl-card--border">
-		<?=$this->areablock('content', array(
-			'allowed' => array('text'),
-			'toolbar' => true,
-			'params' => array(
-				'text' => array('width' => 0)
-			)
-		));?>
-	</div>
-</div>
+</article>
