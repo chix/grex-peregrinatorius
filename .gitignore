@@ -54,6 +54,7 @@
 
 # composer libraries
 /vendor
+/composer.lock
 
 # frontend stack
 /nbproject

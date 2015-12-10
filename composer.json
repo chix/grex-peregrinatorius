@@ -1,6 +1,13 @@
 {
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://packages.portadesign.cz"
+		}
+	],
 	"require": {
 		"php": ">=5.5.0",
+		"portabucket/pimcore": "4.0.0-p3579",
 		"zendframework/zendframework1": "~1.12",
 		"symfony/console": "~2.7",
 		"symfony/finder": "~2.7",
@@ -12,6 +19,11 @@
 		"google/apiclient": "~1",
 		"oyejorge/less.php": "~1.7",
 		"geoip2/geoip2": "~2"
+	},
+	"extra": {
+		"installer-paths": {
+			"pimcore": ["portabucket/pimcore"]
+		}
 	},
 	"autoload": {
 		"psr-4": {
