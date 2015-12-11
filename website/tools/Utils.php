@@ -1,8 +1,8 @@
 <?php
 
-namespace Website;
+namespace Website\Tool;
 
-class Tool
+class Utils
 {
 	private static $inheritance;
 	private static $fallback;

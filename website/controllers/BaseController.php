@@ -17,9 +17,6 @@ class BaseController extends Action
 	{
 		parent::init();
 
-		//add view helpers
-		$this->view->addHelperPath(PIMCORE_WEBSITE_PATH.'/lib/Website/View/Helper', '\\Website\\View\\Helper');
-
 		//current url
 		$this->currentUrl = $this->getRequest()->getRequestUri();
 		$this->view->currentUrl = $this->currentUrl;

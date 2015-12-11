@@ -27,6 +27,10 @@ class Action extends \Pimcore\Controller\Action\Frontend
 
 		parent::init();
 
+		//add action helpers
+		\Zend_Controller_Action_HelperBroker::addPath(PIMCORE_WEBSITE_PATH.'/controllers/Action/Helper', '\\Website\\Controller\\Action\\Helper');
+		//add view helpers
+		$this->view->addHelperPath(PIMCORE_WEBSITE_PATH.'/views/helpers', '\\Website\\View\\Helper');
 		//to avoid cache misses in some cases
 		\Pimcore\Model\Cache::setForceImmediateWrite(true);
 
@@ -36,7 +40,7 @@ class Action extends \Pimcore\Controller\Action\Frontend
 			$language = $this->document->getProperty('language');
 			//just in case the document property is not set, should not happen though
 			if (!$language) {
-				\Website\Tool::getDefaultLanguage();
+				\Website\Tool\Utils::getDefaultLanguage();
 			}
 
 			$locale = new \Zend_Locale($language);
@@ -45,7 +49,7 @@ class Action extends \Pimcore\Controller\Action\Frontend
 
 		$this->view->language = $locale->getLanguage();
 		$this->language = $locale->getLanguage();
-		$this->defaultLanguage = \Website\Tool::getDefaultLanguage();
+		$this->defaultLanguage = \Website\Tool\Utils::getDefaultLanguage();
 		$this->view->defaultLanguage = $this->defaultLanguage;
 	}
 

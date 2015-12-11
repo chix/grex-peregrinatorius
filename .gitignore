@@ -49,8 +49,8 @@
 
 # setup and deployment stuff
 /website/cli/console.php
-/website/lib/Website/Tool/Setup
-/website/lib/Website/Tool/Deployment
+/website/tools/Setup
+/website/tools/Deployment
 
 # composer libraries
 /vendor

@@ -1,4 +1,4 @@
-<!--<?=\Website\Tool::image($this->post->getElement('headerImage'), $this->thumbnail);?>-->
+<!--<?=\Website\Tool\Utils::image($this->post->getElement('headerImage'), $this->thumbnail);?>-->
 <div class="post-preview">
 	<a href="<?=$this->post->getFullPath();?>">
 		<h2 class="post-title">

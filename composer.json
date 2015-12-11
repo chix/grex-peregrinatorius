@@ -27,7 +27,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Pimcore\\": "pimcore/lib/Pimcore"
+			"Pimcore\\": "pimcore/lib/Pimcore",
+			"Website\\Controller\\": "website/controllers",
+			"Website\\Model\\": "website/models",
+			"Website\\Form\\": "website/forms",
+			"Website\\Tool\\": "website/tools",
+			"Website\\View\\Helper\\": "website/views/helpers"
 		}
 	},
 	"scripts": {
