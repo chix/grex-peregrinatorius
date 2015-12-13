@@ -23,7 +23,13 @@
 					?>
 					<<?=$subTitleClass;?> class="subheading"><?=$this->editable('subTitle', 'input');?></<?=$subTitleClass;?>>
 					<?if($this->headerType == 'post'):?>
-						<!--<span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>-->
+						<?if($this->editmode):?>
+							<?=$this->editable('author', 'href');?>
+							<hr>
+							<?=$this->editable('createdOn', 'date');?>
+						<?else:?>
+							<?=$this->partial('cms/snippets/post-meta-partial.php', array('post' => $this->document));?>
+						<?endif;?>
 					<?endif;?>
 				</div>
 			</div>

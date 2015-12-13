@@ -8,5 +8,8 @@
 			<?=$this->post->getElement('subTitle');?>
 		</h3>
 	</a>
-	<!--<p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>-->
+	<?=$this->partial('cms/snippets/post-meta-partial.php', array(
+		'post' => $this->post,
+		'postList' => true
+	));?>
 </div>

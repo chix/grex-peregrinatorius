@@ -21,6 +21,19 @@ class CmsController extends \Website\Controller\BaseController
 		$this->setCanonicalUrl();
 
 		$this->view->headerType = 'page';
+
+		$this->view->members = $this->document->getChilds();
+	}
+
+	public function memberAction()
+	{
+		if ($this->editmode) {
+			$this->enableLayout();
+			$this->renderScript('cms/snippets/member.php');
+		} else {
+			$name = $this->document->getElement('name')->text;
+			$this->gotoUrl('/kdo-jsme#' . \Website\Tool\Utils::webalize($name), 301);
+		}
 	}
 
 	public function blogAction()

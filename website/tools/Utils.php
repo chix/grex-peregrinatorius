@@ -80,4 +80,33 @@ class Utils
 
 		return $html;
 	}
+
+	public static function loadAssets($rootFolderOrAssetArray = array(), $allowedTypes = array('image'))
+	{
+		$queue = array();
+		if ($rootFolderOrAssetArray instanceof \Pimcore\Model\Asset\Folder) {
+			$queue[] = $rootFolderOrAssetArray;
+		} elseif (is_array($rootFolderOrAssetArray)) {
+			$queue = $rootFolderOrAssetArray;
+		} else {
+			$root = \Pimcore\Model\Asset\Folder::getById($rootFolderOrAssetArray);
+			if ($root)
+				$queue[] = $root;
+		}
+
+		$assets = array();
+		while ($asset = array_shift($queue)) {
+			if (!$asset instanceof \Pimcore\Model\Asset)
+				continue;
+
+			if ($asset instanceof \Pimcore\Model\Asset\Folder) {
+				foreach ($asset->getChilds() as $child) {
+					$queue[] = $child;
+				}
+			} elseif (in_array($asset->getType(), $allowedTypes)) {
+				$assets[] = $asset;
+			}
+		}
+		return $assets;
+	}
 }

@@ -5,3 +5,4 @@ CKEDITOR.editorConfig = function( config ) {
 	}
 };
 CKEDITOR.dtd.$removeEmpty.i = 0;
+CKEDITOR.on('dialogDefinition', pimcore.globalmanager.get('websiteEditorConfig').ext.dialogDefinitionCallback);
