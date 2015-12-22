@@ -7,7 +7,7 @@
 	],
 	"require": {
 		"php": ">=5.5.0",
-		"portabucket/pimcore": "4.0.0-p3579",
+		"portabucket/pimcore": "dev-porta-4.0.0-b2-3582",
 		"zendframework/zendframework1": "~1.12",
 		"symfony/console": "~2.7",
 		"symfony/finder": "~2.7",
@@ -18,7 +18,9 @@
 		"hybridauth/hybridauth": "~2",
 		"google/apiclient": "~1",
 		"oyejorge/less.php": "~1.7",
-		"geoip2/geoip2": "~2"
+		"geoip2/geoip2": "~2",
+		"psr/log": "*",
+		"monolog/monolog": "~1"
 	},
 	"extra": {
 		"installer-paths": {
