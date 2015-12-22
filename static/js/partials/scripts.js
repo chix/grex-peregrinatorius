@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$('.grex-entry img').each(function() {
+		var newClass = 'grex-image ' + $(this).attr('class');
+
 		$(this).addClass('img-responsive');
 
 		var attributes = [];
@@ -11,7 +13,7 @@ $(document).ready(function(){
 		}
 
 		if (attributes.length) {
-			$(this).wrap('<div class="grex-image" data-caption="' + attributes.join(' &middot; ') + '"></div>');
+			$(this).wrap('<div class="' + newClass + '" data-caption="' + attributes.join(' &middot; ') + '"></div>');
 		}
 	});
 });

@@ -28,6 +28,16 @@ $primaryColor: #444;
 		}
 	}
 
+	&-img-left {
+		float: left;
+		margin: 10px 20px 10px 0;
+	}
+
+	&-img-right {
+		float: right;
+		margin: 10px 0 10px 20px;
+	}
+
 	&-image {
 		position: relative;
 		display: inline-block;
@@ -44,16 +54,11 @@ $primaryColor: #444;
 			padding: 0.5em 1em;
 			font-size: 0.7em;
 		}
-	}
 
-	&-img-left {
-		float: left;
-		margin: 10px 20px 10px 0;
-	}
+		img {
+			margin: 0;
+		}
 
-	&-img-right {
-		float: right;
-		margin: 10px 0 10px 20px;
 	}
 
 	&-zigzag {
