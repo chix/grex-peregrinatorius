@@ -7,12 +7,12 @@ class BaseController extends \Pimcore\Controller\Action\Frontend
 
 	protected $language;
 	protected $defaultLanguage;
-	
+
 	/** @var \Pimcore\Translate\Website */
 	protected $translator = null;
 	protected $currentUrl = null;
 	protected $canonicalUrl = null;
-	
+
 	/**
 	 * sets currentUrl and cache keys for code snippets which should be output cached on each URL
 	 */
@@ -37,7 +37,7 @@ class BaseController extends \Pimcore\Controller\Action\Frontend
 		//add view helpers
 		$this->view->addHelperPath(PIMCORE_WEBSITE_PATH.'/views/helpers', '\\Website\\View\\Helper');
 		//to avoid cache misses in some cases
-		\Pimcore\Model\Cache::setForceImmediateWrite(true);
+		\Pimcore\Cache::setForceImmediateWrite(true);
 		//language setup
 		if (\Zend_Registry::isRegistered("Zend_Locale")) {
 			$locale = \Zend_Registry::get("Zend_Locale");
@@ -59,7 +59,7 @@ class BaseController extends \Pimcore\Controller\Action\Frontend
 		$this->currentUrl = $this->getRequest()->getRequestUri();
 		$this->view->currentUrl = $this->currentUrl;
 	}
-	
+
 	public function preDispatch()
 	{
 		parent::preDispatch();
@@ -75,6 +75,7 @@ class BaseController extends \Pimcore\Controller\Action\Frontend
 
 		$websiteManager = new \Website\Model\WebsiteManager();
 		$this->view->mainNavigation = $websiteManager->getMainNavigation();
+		$this->view->metaOgTags = $websiteManager->getDocumentMetaTags(1);
 		$this->view->canonicalUrl = $this->canonicalUrl;
 	}
 
