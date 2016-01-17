@@ -16,13 +16,4 @@
 			));?>
 		</div>
 	</div>
-	<div class="row">
-		<?=$this->areablock('partners', array(
-			'allowed' => array('partner'),
-			'toolbar' => true,
-			'params' => array(
-				'partner' => array('colClass'=> 'col-xs-3', 'thumbnail' => 'PartnerLogo', 'width' => 0)
-			)
-		));?>
-	</div>
 </div>

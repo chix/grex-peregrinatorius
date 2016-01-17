@@ -3,6 +3,7 @@
   <brick>
     <text>1</text>
     <gallery>1</gallery>
+    <partner>1</partner>
   </brick>
   <plugin>
     <Backend>1</Backend>

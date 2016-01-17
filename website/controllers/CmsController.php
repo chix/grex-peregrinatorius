@@ -12,7 +12,7 @@ class CmsController extends \Website\Controller\BaseController
 
 		$this->view->headerType = 'site';
 		$blogManager = new \Website\Model\BlogManager();
-		$this->view->posts = $blogManager->getPosts(3);
+		$this->view->posts = $blogManager->getPosts(4);
 	}
 
 	public function whoWeAreAction()
@@ -55,6 +55,22 @@ class CmsController extends \Website\Controller\BaseController
 	}
 
 	public function partnersAction()
+	{
+		$this->enableLayout();
+		$this->setCanonicalUrl();
+
+		$this->view->headerType = 'page';
+	}
+
+	public function ourPlansAction()
+	{
+		$this->enableLayout();
+		$this->setCanonicalUrl();
+
+		$this->view->headerType = 'page';
+	}
+
+	public function simplePageAction()
 	{
 		$this->enableLayout();
 		$this->setCanonicalUrl();

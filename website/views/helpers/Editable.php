@@ -37,8 +37,8 @@ class Editable extends \Zend_View_Helper_Abstract
 			),
 			'image' => array(
 				'hidetext' => true,
-				'reload' => true, 
-				'thumbnail' => 'ArticleGalleryThumbnail',
+				'reload' => false, 
+				'thumbnail' => 'GalleryImage',
 				'uploadPath' => '/dokumenty'
 			),
 			'multihref' => array(

@@ -4,6 +4,11 @@ $primaryColor: #444;
 	background-color: $primaryColor;
 }
 
+.thumbnail a > img, .thumbnail img {
+	height: auto;
+	width: 100%;
+}
+
 .grex {
 
 	&-logo {

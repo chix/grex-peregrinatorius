@@ -15,13 +15,12 @@
 						'gallery' => array('thumbnail' => 'GalleryImage', 'width' => 0)
 					)
 				));?>
-				<!--
-				<h2 class="section-heading">Reaching for the Stars</h2>
-				<a href="#">
-					<img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-				</a>
-				<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-				-->
+
+				<ul class="pager">
+					<li class="previous">
+						<a href="/blog">&larr; Zpět na blog</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

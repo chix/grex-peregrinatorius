@@ -68,7 +68,7 @@ class BaseController extends \Pimcore\Controller\Action\Frontend
 		//set some document editables defaults
 		$this->view->width = 0;
 	}
-	
+
 	public function postDispatch()
 	{
 		parent::postDispatch();
