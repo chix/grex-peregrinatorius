@@ -2,25 +2,68 @@
 	"repositories": [
 		{
 			"type": "composer",
-			"url": "http://packages.portadesign.cz"
+			"url": "https://packages.portadesign.cz"
 		}
 	],
+	"config": {
+		"optimize-autoloader": true
+	},
 	"require": {
 		"php": ">=5.5.0",
-		"portabucket/pimcore": "dev-porta-4.0.0-b2-3582",
+		"ext-iconv" : "*",
+		"ext-dom" : "*",
+		"ext-SimpleXML" : "*",
+		"ext-gd" : "*",
+		"ext-exif" : "*",
+		"ext-mbstring" : "*",
+		"ext-fileinfo" : "*",
+		"ext-zip" : "*",
+		"ext-zlib" : "*",
+		"ext-bz2" : "*",
+		"ext-openssl" : "*",
+		"portabucket/pimcore": "dev-porta-4.2.0-3917",
 		"zendframework/zendframework1": "~1.12",
-		"symfony/console": "~2.7",
-		"symfony/finder": "~2.7",
-		"symfony/var-dumper": "~2.7",
-		"symfony/css-selector": "~2.7",
-		"filp/whoops": "~1",
+		"symfony/console": "~3",
+		"symfony/finder": "~3",
+		"symfony/process": "~3",
+		"symfony/var-dumper": "~3",
+		"symfony/css-selector": "~3",
+		"symfony/event-dispatcher": "~3",
+		"symfony/filesystem": "~3",
+		"filp/whoops": "~2",
 		"tijsverkoyen/css-to-inline-styles": "~1.5",
 		"hybridauth/hybridauth": "~2",
 		"google/apiclient": "~1",
 		"oyejorge/less.php": "~1.7",
 		"geoip2/geoip2": "~2",
 		"psr/log": "*",
-		"monolog/monolog": "~1"
+		"monolog/monolog": "~1",
+		"sabre/dav": "~3.1",
+		"pear/net_url2": "~2.2",
+		"ramsey/uuid": "~3",
+		"colinmollenhour/credis": "~1",
+		"endroid/qrcode": "~1.5",
+		"mpratt/embera": "~1",
+		"defuse/php-encryption": "~2",
+		"nesbot/carbon": "~1",
+		"php-di/php-di": "~5",
+		"linfo/linfo": "~3",
+		"amnuts/opcache-gui": "~2",
+		"vrana/adminer": "~4.2",
+		"egulias/email-validator": "*",
+		"mrclay/minify": "~2.2.1",
+		"sunra/php-simple-html-dom-parser": "~1.5.0"
+	},
+	"require-dev": {
+		"deployer/deployer": "~3.3"
+	},
+	"suggest": {
+		"ext-curl" : "*",
+		"ext-mysqli" : "*",
+		"ext-pdo_mysql" : "*",
+		"ext-imagick" : "*",
+		"ext-redis" : "*",
+		"ext-memcache" : "*"
 	},
 	"extra": {
 		"installer-paths": {
@@ -29,6 +72,8 @@
 	},
 	"autoload": {
 		"psr-4": {
+			"Pimcore\\Model\\Object\\": "website/var/classes/Object",
+			"Pimcore\\Model\\": "pimcore/models",
 			"Pimcore\\": "pimcore/lib/Pimcore",
 			"Website\\Controller\\": "website/controllers",
 			"Website\\Model\\": "website/models",
@@ -38,7 +83,11 @@
 		}
 	},
 	"scripts": {
-		"post-install-cmd": "Pimcore\\Composer::postInstall",
-		"post-update-cmd": "Pimcore\\Composer::postUpdate"
+		"post-install-cmd": [
+			"Pimcore\\Composer::postInstall"
+		],
+		"post-update-cmd": [
+			"Pimcore\\Composer::postUpdate"
+		]
 	}
 }

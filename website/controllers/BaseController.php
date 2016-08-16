@@ -18,18 +18,6 @@ class BaseController extends \Pimcore\Controller\Action\Frontend
 	 */
 	public function init()
 	{
-		//init session the pimcore way, so there are no conflicts
-		if (!\Pimcore\Tool::isFrontentRequestByAdmin()) {
-			\Pimcore\Tool\Session::get('FlashMessenger');
-			\Pimcore\Tool\Session::get('openid');
-			\Pimcore\Tool\Session::get('Zend_Auth');
-			\Pimcore\Tool\Session::get('Zend_Amf');
-			\Pimcore\Tool\Session::get('Zend_File_Transfer_Adapter_Http_ProgressBar');
-			\Pimcore\Tool\Session::get('Zend_Form_Element_Hash_salt_csrf');
-			\Pimcore\Tool\Session::get('zend_openid');
-			\Pimcore\Tool\Session::get('Website\\Model\\Cart');
-		}
-
 		parent::init();
 
 		//add action helpers

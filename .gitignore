@@ -15,8 +15,9 @@
 !/website/var/classes/objectbricks
 
 # various configuration files
-/website/var/config/system.xml
-/website/var/config/cache.xml
+/website/var/config/LEGACY
+/website/var/config/system.php
+/website/var/config/cache.php
 /website/var/config/robots.txt
 /website/var/config/Geo*
 /website/var/config/object/*
@@ -50,7 +51,10 @@
 # setup and deployment stuff
 /website/cli/console.php
 /website/tools/Setup
-/website/tools/Deployment
+/website/tools/Deployer
+/website/tools/Console
+/website/models/Generator.php
+/website/tools/Update
 
 # composer libraries
 /vendor
