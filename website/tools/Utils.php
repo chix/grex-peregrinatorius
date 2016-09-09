@@ -30,7 +30,7 @@ class Utils
 
 	public static function toCacheKey($text)
 	{
-		return str_replace('-', '_', self::webalize($text));
+		return str_replace(['-', '~'], '_', self::webalize($text));
 	}
 
 	public static function forceInheritanceAndFallbackValues($inherit = true)

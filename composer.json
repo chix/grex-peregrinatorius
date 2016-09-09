@@ -21,7 +21,8 @@
 		"ext-zlib" : "*",
 		"ext-bz2" : "*",
 		"ext-openssl" : "*",
-		"portabucket/pimcore": "dev-porta-4.2.0-3917",
+		"pimcore/core-version": "4.3.0",
+		"portabucket/pimcore": "dev-porta-4.3.0-3952",
 		"zendframework/zendframework1": "~1.12",
 		"symfony/console": "~3",
 		"symfony/finder": "~3",
@@ -51,6 +52,7 @@
 		"amnuts/opcache-gui": "~2",
 		"vrana/adminer": "~4.2",
 		"egulias/email-validator": "*",
+		"neitanod/forceutf8": "~2",
 		"mrclay/minify": "~2.2.1",
 		"sunra/php-simple-html-dom-parser": "~1.5.0"
 	},

@@ -10,9 +10,8 @@
 # file cache
 /website/var/cache/*
 
-# generated PHP classes, keep definition files (.psf)
-/website/var/classes/Object*
-!/website/var/classes/objectbricks
+# generated PHP classes, keep definition files
+/website/var/classes/Object
 
 # various configuration files
 /website/var/config/LEGACY
