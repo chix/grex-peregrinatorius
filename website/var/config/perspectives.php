@@ -24,10 +24,6 @@ return [
                 "expanded" => FALSE,
                 "hidden" => FALSE,
                 "sort" => -1
-            ],
-            [
-                "type" => "customview",
-                "id" => 0
             ]
         ],
         "toolbar" => [
@@ -172,10 +168,6 @@ return [
                         ]
                     ]
                 ]
-            ],
-            [
-                "type" => "customview",
-                "id" => 0
             ]
         ]
     ]
