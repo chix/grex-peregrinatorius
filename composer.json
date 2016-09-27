@@ -2,7 +2,7 @@
 	"repositories": [
 		{
 			"type": "composer",
-			"url": "https://packages.portadesign.cz"
+			"url": "https://composer.martinkuric.cz"
 		}
 	],
 	"config": {
@@ -22,7 +22,7 @@
 		"ext-bz2" : "*",
 		"ext-openssl" : "*",
 		"pimcore/core-version": "4.3.0",
-		"portabucket/pimcore": "dev-porta-4.3.0-3952",
+		"martin_kuric/pimcore": "dev-4.3.0-3952",
 		"zendframework/zendframework1": "~1.12",
 		"symfony/console": "~3",
 		"symfony/finder": "~3",
@@ -69,7 +69,7 @@
 	},
 	"extra": {
 		"installer-paths": {
-			"pimcore": ["portabucket/pimcore"]
+			"pimcore": ["martin_kuric/pimcore"]
 		}
 	},
 	"autoload": {
