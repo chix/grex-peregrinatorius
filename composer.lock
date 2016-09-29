@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac122e071307c44eb9c8ab7ce58e2842",
+    "hash": "8a951fce55f697245ffc6840a31023ac",
     "content-hash": "90784cf8ba4a2a55e728165a7afeee17",
     "packages": [
         {
@@ -765,7 +765,7 @@
             "version": "dev-4.3.0-3952",
             "source": {
                 "type": "git",
-                "url": "ssh://git@bitbucket.org/martin_kuric/pimcore",
+                "url": "ssh://git@mk/martin_kuric/pimcore",
                 "reference": "b250a51a31acb5b2707f5ca42da6ea009a5c938e"
             },
             "require": {
